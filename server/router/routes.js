@@ -24,8 +24,6 @@ const projectsController = require("../controllers/projectsPage");
 const projectController = require("../controllers/projectData");
 const deleteProjectController = require("../controllers/deleteProjectDB");
 // users
-const newUserController = require("../controllers/registerPage");
-const storeUserController = require("../controllers/storeUserAction");
 const loginController = require("../controllers/loginPage");
 const loginUserController = require("../controllers/loginUserAction");
 const logoutUserController = require("../controllers/logoutUserAction");
@@ -34,14 +32,11 @@ const authUser = require("../middleware/ifAuthorized");
 const ifLoggedIn = require("../middleware/ifLoggeedInAlready");
 const blogCheck = require("../middleware/validateBlogForm");
 const featureCheck = require("../middleware/validateFeaturesForm");
-const projCheck = require("../middleware/validateProjectForm");
 
 router.get("/", cache(2), homeController);
 router.get("/contact", contactController);
 router.post("/send/form", sendFormController);
 // users
-router.get("/register", ifLoggedIn, newUserController);
-router.post("/store/user", storeUserController);
 router.get("/login", ifLoggedIn, loginController);
 router.post("/login/user", loginUserController);
 router.get("/logout", logoutUserController);
