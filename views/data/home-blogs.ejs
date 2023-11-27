@@ -1,0 +1,19 @@
+<% for(i=0; i < blogs.length; i++) { %>
+    <div class="row mt-5 pt-5">
+        <div class="col-md-12 mb-4">
+            <p class="display-5">Read Our Blogs On Web Designs</p>
+        </div>
+        <div class="col-md-4 mb-3">
+            <img src="<%= blogs[i].image %>" class="img-thumbnail" alt="<%= blogs[i].title %>" />
+        </div>
+        <div class="col-md-8 mb-3">
+            <a href="/post/<%= blogs[i]._id %>">
+                <p>Posted By: <%= blogs[i].userid.fName %>, on <%= blogs[i].datePosted.toLocaleString() %></p>
+                <h4 class="h2"><%= blogs[i].title %></h4>
+                <p>
+                    <%= blogs[i].body.substring(0, 280) %> . . .
+                </p>
+            </a>
+        </div>
+    </div>
+<% } %>

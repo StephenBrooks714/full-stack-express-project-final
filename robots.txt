@@ -1,0 +1,7 @@
+User-agent: Googlebot
+Disallow: /nogooglebot/
+
+User-agent: *
+Allow: /
+
+Sitemap: https://udemy-express-node-cf75af940836.herokuapp.com/sitemap.xml
