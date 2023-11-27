@@ -15,9 +15,10 @@
     <section class="text-justify">
         <h1 class="font-weight-bold mb-3"><%= post.title %></h1>
 
+         <% if(loggedIn) { %>
+
             <a href="/delete/post/<%= post._id %>" class="btn btn-warning rounded-pill mb-2">delete post</a>
-
-
+         <% } %>
 
         <p class="font-weight-bold">
             <%= post.body %>
